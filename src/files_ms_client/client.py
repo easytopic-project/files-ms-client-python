@@ -1,5 +1,5 @@
 from os import getenv
-from requests import post, get
+import requests as req
 import json
 from mimetypes import guess_type
 
@@ -9,10 +9,15 @@ file_key = 'file'
 # Upload a file to the server
 def upload(file: str, url: str = files_url):
     files = {file_key: (file, open(file, 'rb'), guess_type(file)[0])}
-    r = post(f'{url}/files', files=files)
+    r = req.post(f'{url}/files', files=files)
     return r.json()[file_key]
 
 # Download a file from the server
 def download(file: str, path: str, url: str = files_url):
-    r = get(f'{url}/files/{file}')
+    r = req.get(f'{url}/files/{file}')
     open(path, 'wb').write(r.content)
+
+# Delete a file from the server
+def delete(file: str, url: str = files_url):
+    r = req.delete(f'{url}/files/{file}')
+    return r.json()
