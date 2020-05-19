@@ -11,7 +11,7 @@ setup(
     description='Python client for Node Files Microservice',
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    install_requires=[],
+    install_requires=['requests'],
     # test_suite='test',  
     classifiers=[
         "Programming Language :: Python :: 3",
