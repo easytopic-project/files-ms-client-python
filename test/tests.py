@@ -4,7 +4,7 @@ sys.path.append(modules_dir)
 
 # Usage example
 from client import download, upload
-url = 'http://localhost:3000/'
+url = 'http://localhost:3000'
 r = upload('../temp/test.jpg', url)
 download(r['name'], '../temp/result.jpg', url)
 
