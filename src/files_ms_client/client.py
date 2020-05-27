@@ -3,7 +3,7 @@ import requests as req
 import json
 from mimetypes import guess_type
 
-files_url = (getenv('FILES_URL') or '')
+files_url = getenv('FILES_URL', '')
 file_key = 'file'
 
 # Upload a file to the server
