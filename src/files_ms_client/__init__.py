@@ -1,9 +1,11 @@
-"""Files Microservice Client
+"""
+# Files Microservice Client
 
 Python client for Node Files Microservice (https://github.com/maxjf1/node-files-microservice)
 
-By default, `FILES_URL` enviroment variable is used to access the files server,
-but it can be overriden by the `url` argument in all methods."""
+By default, `FILES_URL` enviroment variable is used to access the 
+files server, but it can be overriden by the `url` argument in all methods.
+"""
 
 from os import getenv, remove
 import requests as req
